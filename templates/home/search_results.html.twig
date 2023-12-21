@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Résultats de la recherche</h1>
+
+    {% for product in products %}
+        <h2>{{ product.product_name }}</h2>
+        <p>{{ product.brands }}</p>
+        {% if product.image_front_small_url is defined %}
+            <img src="{{ product.image_front_small_url }}" alt="Product Image">
+        {% else %}
+            <p>Aucune image disponible pour ce produit.</p>
+        {% endif %}
+        <hr>
+    {% endfor %}
+{% endblock %}
