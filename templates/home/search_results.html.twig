@@ -1,17 +1,38 @@
+{# templates/home/search_results.html.twig #}
+
 {% extends 'base.html.twig' %}
 
-{% block title %}Résultats de recherche{% endblock %}
+{% block title %}Search Results{% endblock %}
 
 {% block body %}
-    <h1>Résultats de recherche</h1>
+    <h1>Search Results</h1>
 
-    {% if results %}
+    {% if results|length > 0 %}
         <ul>
-            {% for result in results %}
-                <li>{{ result.product_name }}</li>
+            {% for product in results %}
+                <li>
+                    <strong>{{ product.product_name }}</strong><br>
+
+                    {% if product.image_url %}
+                        <img src="{{ product.image_url }}" alt="{{ product.product_name }}">
+                    {% else %}
+                        <p>No image available</p>
+                    {% endif %}
+
+                    {% if product.generic_name %}
+                        <p><strong>Generic Name:</strong> {{ product.generic_name }}</p>
+                    {% endif %}
+
+                    {% if product.ingredients_text %}
+                        <p><strong>Ingredients:</strong> {{ product.ingredients_text }}</p>
+                    {% endif %}
+
+                    <a href="{{ path('product_show', {'code': product.code}) }}">Show Details</a>
+                </li>
+                <hr>
             {% endfor %}
         </ul>
     {% else %}
-        <p>Aucun résultat.</p>
+        <p>No results found</p>
     {% endif %}
 {% endblock %}

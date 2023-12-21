@@ -39,14 +39,24 @@ class HomeController extends AbstractController
     #[Route('/product/{code}', name: 'product_show')]
     public function productDetails($code, Api $api): Response
     {
-        $product = $api->getProduct($code);
-        $productImageUrl = $product->getImageFrontThumbUrl();
-
-        return $this->render('home/product_details.html.twig', [
-            'product' => $product,
-            'product_image_url' => $productImageUrl,
-        ]);
+        try {
+            $product = $api->getProduct($code);
+    
+            // Utilisez les propriétés ou méthodes correctes pour obtenir les informations nécessaires
+            $productImageUrl = $product->image_url; // Exemple, utilisez la méthode ou la propriété correcte
+    
+            return $this->render('home/product_details.html.twig', [
+                'product' => $product,
+                'product_image_url' => $productImageUrl,
+            ]);
+        } catch (\Exception $e) {
+            // Gérer l'exception, par exemple en affichant un message d'erreur
+            return $this->render('home/error.html.twig', [
+                'error' => $e,
+            ]);
+        }
     }
+    
 
     #[Route('/search', name: 'search')]
     public function search(Request $request, Api $api): Response
