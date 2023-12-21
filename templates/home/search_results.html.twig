@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultats de recherche{% endblock %}
+
+{% block body %}
+    <h1>Résultats de recherche</h1>
+
+    {% if results %}
+        <ul>
+            {% for result in results %}
+                <li>{{ result.product_name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucun résultat.</p>
+    {% endif %}
+{% endblock %}

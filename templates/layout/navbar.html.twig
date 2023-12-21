@@ -1,10 +1,7 @@
 <!-- Responsive navbar-->
     <nav class="flex bg-neutral-200 justify-between justify-items-center py-3 px-10">
-            <h1 class="font-serif italic text-2xl p-4 ml-4">ACME</h1>
-        <div class="flex  justify-between px-8">
-            <a class="p-4 text-center" href="#">Accueil</a>
-            <a class="p-4" href="#">A propos</a>
-            <a class="p-4" href="#">Menu</a>
-            <a class="p-4" href="#">Panier</a>
-        </div>
+            <ul>
+                <li><a href="{{ path('accueil') }}">Accueil</a></li>
+                <li><a href="{{ path('search') }}">Recherche</a></li>
+            </ul>
     </nav>
