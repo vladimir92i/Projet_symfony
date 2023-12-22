@@ -2,6 +2,9 @@
 
 {% block body %}
     <h1>{{ product.product_name }}</h1>
+
+    <img src="{{ product.image_url }}" alt="{{ product.product_name }}">
+
     <p>{{ product.generic_name }}</p>
     <p>{{ product.ingredients_text }}</p>
 {% endblock %}
