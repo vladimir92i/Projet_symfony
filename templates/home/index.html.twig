@@ -5,9 +5,9 @@
     <p>{{ product.brands }}</p>
     
     {% if product.image_front_thumb_url is defined %}
-        <img src="{{ product.image_front_thumb_url }}" alt="Product Image">
+        <img src="{{ product.image_front_thumb_url }}" alt="Image produit">
     {% else %}
-        <p>Aucune image disponible pour ce produit.</p>
+        <p>Aucune image n est  disponible pour ce produit.</p>
     {% endif %}
 
 {% endblock %}
