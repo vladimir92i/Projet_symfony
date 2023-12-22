@@ -1,0 +1,16 @@
+{# templates/product/index.html.twig #}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page d'accueil</title>
+</head>
+<body>
+    <h1>Produits Alimentaires</h1>
+    <ul>
+        {% for product in products %}
+            <li>{{ product.product_name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
