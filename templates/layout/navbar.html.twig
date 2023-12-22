@@ -1,7 +1,15 @@
 <!-- Responsive navbar-->
-    <nav class="flex bg-neutral-200 justify-between justify-items-center py-3 px-10">
+    <nav class="flex bg-neutral-200 justify-between justify-items-center py-3 px-10 ">
             <ul>
-                <li><a href="{{ path('accueil') }}">Accueil</a></li>
-                <li><a href="{{ path('search') }}">Recherche</a></li>
+            {{ form_start(form) }}
+            <div class="search_bar flex">
+                <a class="pr-4" href="{{ path('accueil') }}">Accueil</a>
+                <a class="pr-4" href="{{ path('search') }}">Recherche</a>
+                
+                
+                    {{ form_widget(form) }}
+                    <button class="pr-4" type="submit">Rechercher</button>
+                </div>
+                {{ form_end(form) }}
             </ul>
     </nav>

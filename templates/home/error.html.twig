@@ -3,7 +3,6 @@
     <h1>Une erreur s'est produite</h1>
     
     <p>{{ error.message }}</p>
-    {# Ajoutez d'autres détails sur l'erreur si nécessaire #}
     {% if app.debug %}
     {% if error.trace is iterable %}
         <pre>
