@@ -13,8 +13,11 @@ class ProductSearchType extends AbstractType
     {
         $builder
             ->add('product_name', TextType::class, [
-                'label' => 'Nom du produit',
+                'label' => 'Nom du produit : ',
                 'required' => false,
+                'attr' => [
+                    'style' => 'border: 1px solid #000;',
+                ],
             ]);
     }
 

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<section class="flex flex-col justify-center text-center">
+    <h1 class="text-2xl pb-4">Recherche de produits</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="border border-black rounded-full p-2" type="submit">Rechercher</button>
+    {{ form_end(form) }}
+    </section>
+{% endblock %}

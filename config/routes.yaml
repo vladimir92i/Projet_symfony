@@ -4,7 +4,7 @@ controllers:
 
 search_results:
     path: '/search-results/{query}'
-    controller: 'App\Controller\HomeController::searchResults'
+    controller: 'App\Controller\SearchController::searchResults'
     methods: ['GET']
     options:
         expose: true

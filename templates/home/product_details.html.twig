@@ -1,10 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="flex flex-col justify-center items-center h-auto text-center max-w-96 max-h-full mx-auto">
     <h1>{{ product.product_name }}</h1>
+    {% if product.image_url is defined %}
+    <img class="mx-auto my-auto m-0" src="{{ product.image_url }}" alt="{{ product.product_name }}">
 
-    <img src="{{ product.image_url }}" alt="{{ product.product_name }}">
-
-    <p>{{ product.generic_name }}</p>
+    {% else %}
+        <img class="mx-auto my-auto m-0" src="{{ asset('images/indispo.png') }}" alt="{{ product.product_name }}">
+    {% endif %}
+    <p>Nom du produit : {{ product.generic_name }}</p>
+    <br>
+    <p>Ingredients : </p>
     <p>{{ product.ingredients_text }}</p>
+</div>
 {% endblock %}

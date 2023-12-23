@@ -1,7 +1,7 @@
 <!-- Responsive navbar-->
-    <nav class="flex bg-neutral-200 justify-between justify-items-center py-3 px-10">
-            <ul>
-                <li><a href="{{ path('accueil') }}">Accueil</a></li>
-                <li><a href="{{ path('search') }}">Recherche</a></li>
-            </ul>
-    </nav>
+<nav class="flex bg-neutral-200 py-3 px-10 ">
+        <ul class="flex gap-4 text-center">
+            <a class="border border-black rounded-full p-2 w-18" href="{{ path('accueil') }}">Accueil</a>
+            <a class="border border-black rounded-full p-2 w-22" href="{{ path('search') }}">Recherche</a>
+        </ul>
+</nav>

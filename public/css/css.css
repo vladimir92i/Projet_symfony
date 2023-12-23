@@ -1,3 +1,12 @@
 body {
     font-family: 'Playfair Display', serif;
 }
+
+p {
+    hyphens: auto;
+}
+
+.img {
+    height: 220px !important;
+    width: 230px;
+}
