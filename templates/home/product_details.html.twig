@@ -9,9 +9,20 @@
     {% else %}
         <img class="mx-auto my-auto m-0" src="{{ asset('images/indispo.png') }}" alt="{{ product.product_name }}">
     {% endif %}
+    {% if product.generic_name is defined %}
     <p>Nom du produit : {{ product.generic_name }}</p>
+
+    {% else %}
+        <p>Pas de nom pour ce produit // bug bdd api</p>
+    {% endif %}
     <br>
-    <p>Ingredients : </p>
+    {% if product.ingredients_text is defined %}
+        <p>Ingredients : </p>
     <p>{{ product.ingredients_text }}</p>
+    {% else %}
+        <p>Pas d'Ingredients pour ce produit // bug bdd api</p>
+    {% endif %}
+
+   
 </div>
 {% endblock %}
