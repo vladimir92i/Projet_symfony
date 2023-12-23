@@ -3,19 +3,35 @@
 {% block body %}
 
     <h1>{{ product.product_name }}</h1>
+<div class="relative pb-14">
+    <img src="images/accueil.jpg" class="bg w-full">
+    <div class="flex flex-col justify-center absolute bottom-1 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center bg-white bg-opacity-50 rounded-lg">
+        <h1 class="text-7xl pb-6 mx-5">La<br>Gastronomie<br>à portée de<br>main</h1>
+        <h2 class="p-6 font-bold">Découvrez toutes nos spécialités culinaires</h2>
+        <a href="{{ path('product') }}" class="rounded-full bg-red-900 text-white p-2 m-2 font-bold">Explorer le menu</a>
+    </div>
+</div>
 
-    <p>{{ product.brands }}</p>
-    
-    {% if product.image_front_thumb_url is defined %}
-        <img src="{{ product.image_front_thumb_url }}" alt="Image produit">,
-
-
-
-    {% else %}
-        <p>Aucune image n est  disponible pour ce produit.</p>
-    {% endif %}
-
-
-    
+<div class="flex justify-center pt-10" >
+  <div class="grid grid-rows-3 grid-flow-col gap-4">
+    <div class="row-span-3 h-800px">
+      <img src="images/chef.jpg" class="h-full w-96 object-cover rounded-lg">
+    </div>
+    <div class="col-span-2 h-500">
+      <img src="images/crevettes.jpg" class="h-64 w-full object-cover rounded-lg">
+    </div>
+    <div class="row-span-2 col-span-2 h-full">
+      <img src="images/brochettes.jpg" class="h-full w-64 object-cover rounded-lg">
+    </div>
+  </div>
+  <div class="flex flex-row">
+    <div class="flex flex-col pl-10 pt-52">
+      <h2 class="text-5xl pb-10 ">Découvrez<br>l'excellence culinaire<br>chez nous</h2>
+      <h3 class="font-semibold">Livraison dans les temps</h3>
+      <h3 class="font-semibold">Rapport qualité/prix</h3>
+      <h3 class="font-semibold">Service en ligne de qualité</h3>
+    </div>  
+  </div>
+</div>
 
 {% endblock %}

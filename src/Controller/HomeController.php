@@ -3,6 +3,8 @@
 
 namespace App\Controller;
 
+use Exception;
+use GuzzleHttp\Psr7\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,13 +17,40 @@ class DefaultController extends AbstractController
      */
     public function index(): Response
     {
-        // Appel de l'API Open Food Facts pour obtenir une liste de produits
-        $httpClient = HttpClient::create();
-        $response = $httpClient->request('GET', 'https://world.openfoodfacts.org/cgi/search.pl?json=1&action=process&page_size=5');
 
-        // Traitement de la réponse JSON
-        $data = $response->toArray();
-        $products = $data['products'] ?? [];
+        dump($api);
+
+        dump($product);
+
+        return $this->render('home/index.html.twig', [
+            'product' => $product,
+        ]);
+    }
+    #[Route('/product', name: 'product')]
+    public function ShowProduct(): Response
+    {
+        $api = new Api('food', 'fr');
+        $categories = $api->getCategories('Pastas');
+        dump($categories);
+
+        // $product_categorie = $api->getByFacets($categories);
+
+        return $this->render('home/product_show.html.twig', []);
+    }
+
+
+
+    #[Route('/product/{code}', name: 'product_show')]
+    public function productDetails($code): Response
+    {
+        $api = new Api('food', 'fr');
+
+        $product = $api->getProduct($code);
+
+        dump($product);
+
+        return $this->render('home/product_details.html.twig', [
+            'product' => $product,
 
         return $this->render('home/index.html.twig', [
             'products' => $products,

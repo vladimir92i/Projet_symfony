@@ -1,0 +1,2 @@
+A partir de ce que j'ai : cette url https://world.openfoodfacts.net/api/v2/search?categories_tags_frs&fields=categories_tags_fr
+et le code, recuperer les categories dans une entity et ensuite boucler sur if product alors boucle for 
