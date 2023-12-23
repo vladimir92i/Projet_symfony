@@ -1,0 +1,20 @@
+{# templates/layout/footer.html.twig #}
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+             <div class="footer-section contact-form">
+                <h2>Contactez-nous</h2>
+                <form action="#" method="post">
+                    <input type="email" name="email" class="text-input contact-input" placeholder="Votre adresse e-mail">
+                    <textarea rows="4" name="message" class="text-input contact-input" placeholder="Votre message"></textarea>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; {{ 'now'|date('Y') }}  Tous droits réservés.</p>
+    </div>
+</footer>
