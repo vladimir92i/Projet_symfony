@@ -28,3 +28,4 @@ class ProductSearchType extends AbstractType
         ]);
     }
 }
+
