@@ -1,4 +1,5 @@
 <?php
+// src/Controller/HomeController.php
 
 namespace App\Controller;
 
@@ -7,16 +8,15 @@ use GuzzleHttp\Psr7\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use OpenFoodFacts\Api;
+use Symfony\Component\HttpClient\HttpClient;
 
-class HomeController extends AbstractController
+class DefaultController extends AbstractController
 {
-    #[Route('/', name: 'accueil')]
+    /**
+     * @Route("/", name="homepage")
+     */
     public function index(): Response
     {
-        // Utilisez la même logique pour obtenir un produit fictif ou un produit par défaut
-        $api = new Api('food', 'fr');
-        $product = $api->getProduct('737628064502');
 
         dump($api);
 
@@ -52,6 +52,9 @@ class HomeController extends AbstractController
         return $this->render('home/product_details.html.twig', [
             'product' => $product,
 
+        return $this->render('home/index.html.twig', [
+            'products' => $products,
         ]);
     }
 }
+?>

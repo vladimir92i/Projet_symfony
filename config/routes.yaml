@@ -1,3 +1,10 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+
+search_results:
+    path: '/search-results/{query}'
+    controller: 'App\Controller\HomeController::searchResults'
+    methods: ['GET']
+    options:
+        expose: true
