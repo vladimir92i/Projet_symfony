@@ -1760,7 +1760,7 @@
                 "ruflin/elastica": "^7",
                 "swiftmailer/swiftmailer": "^5.3|^6.0",
                 "symfony/mailer": "^5.4 || ^6",
-                "symfony/mime": "^5.4 || ^6"
+                "symfony/mime": "7.4.12"
             },
             "suggest": {
                 "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
